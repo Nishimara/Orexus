@@ -1,0 +1,7 @@
+{
+  "database": "",
+  "type": "mysql",
+  "entities": ["build/**/*.entity.js"],
+  "username": "",
+  "password": ""
+}
