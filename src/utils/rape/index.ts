@@ -28,5 +28,9 @@ export const rape = async (context: MessageContext) => {
     await userRepository.save(targetData);
 
     // TODO: рейтинг
-    return await context.reply(`пиздец, [id${owner}|чел] трахнул [id${target}|чела] и увеличил его очко на 0.1 см...`, {disable_mentions: true,});
+    if (targetData.sex === 2)
+    return await context.reply(`пиздец, [id${owner}|чел] трахнул [id${target}|чела] и увеличил его очко на 0.1 см...\n` + 
+        'как же он кричал что не хотел быть пидором...', {disable_mentions: true,});
+    return await context.reply(`пиздец, [id${owner}|чел] трахнул [id${target}|чела] и увеличил ее очко на 0.1 см...\n` + 
+        'как же она стонала...', {disable_mentions: true})
 };

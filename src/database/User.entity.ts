@@ -1,5 +1,10 @@
 import { Entity, PrimaryColumn, Column } from 'typeorm';
 
+export enum ENUMSex {
+    female = 1,
+    male
+}
+
 @Entity()
 export class User {
     @PrimaryColumn()
@@ -13,4 +18,7 @@ export class User {
 
     @Column({ type: 'float' })
     analSize!: number;
+    
+    @Column({ type: 'enum', enum:  ENUMSex})
+    sex!: ENUMSex
 }

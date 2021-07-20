@@ -16,11 +16,13 @@ export const getUserFromBD = async (id: number) => {
     const search = await userRepository.findOne(id);
     if (search) return search;
 
+    const sex = await vk.api.users.get({user_ids: String(id), fields: ['sex']});
     const u = userRepository.create({
         id,
         rating: 0,
         analSize: 0,
         dickSize: 15,
+        sex: sex[0].sex
     });
 
     return await userRepository.save(u);
